@@ -30,8 +30,6 @@
 
     // rendering
     rendering: function () {
-      console.log(PROJ.Data.string01);
-      
       var template = _.template($('#template-jsr').html());
       $('.js-jsr').append(
         template({
