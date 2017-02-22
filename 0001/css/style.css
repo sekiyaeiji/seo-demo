@@ -201,10 +201,11 @@ img {
   font-weight: normal;
 }
 .c-section p {
-  font-size: 12px;
+  font-size: 14px;
 }
 .c-section .c-lead {
   text-align: left;
+  font-size: 12px;
 }
 
 .p-section-ssr {
