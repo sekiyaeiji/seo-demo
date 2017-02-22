@@ -4,6 +4,7 @@
   var WIN = window;
   var DOC = document;
   var $DOC = $(document);
+  var $BOD = $('body');
 
 
   // router
@@ -31,6 +32,16 @@
 
       // rendering
       that.rendering();
+
+      // event
+      that.event();
+    },
+
+    // event
+    event: function () {
+      var that = this;
+      
+      $BOD.on('click', '.js-jsr_a', that.transition)
     },
 
     // rendering
@@ -41,6 +52,48 @@
           "string": PROJ.Data.string01
         })
       );
+    },
+
+    // transition
+    transition: function () {
+      var that = this;
+      
+      var current = $('.js-jsrString').text();
+      var $target_text = $('.js-jsrString');
+      var $target_block = $('.js-jsr_a');
+
+      if (current === PROJ.Data.string01) {
+        $target_text
+          .empty()
+          .html(PROJ.Data.string02);
+        $target_block
+          .removeClass('p-section-jsr')
+          .addClass('p-section-jsr02');
+      }
+      else if (current === PROJ.Data.string02) {
+        $target_text
+          .empty()
+          .html(PROJ.Data.string03);
+        $target_block
+          .removeClass('p-section-jsr02')
+          .addClass('p-section-jsr03');
+      }
+      else if (current === PROJ.Data.string03) {
+        $target_text
+          .empty()
+          .html(PROJ.Data.string04);
+        $target_block
+          .removeClass('p-section-jsr03')
+          .addClass('p-section-jsr04');
+      }
+      else if (current === PROJ.Data.string04) {
+        $target_text
+          .empty()
+          .html(PROJ.Data.string05);
+        $target_block
+          .removeClass('p-section-jsr04')
+          .addClass('p-section-jsr05');
+      }
     }
   };
 
@@ -53,6 +106,16 @@
 
       // rendering
       that.rendering();
+
+      // event
+      that.event();
+    },
+
+    // event
+    event: function () {
+      var that = this;
+
+      $BOD.on('click', '.js-jsr_b', that.transition)
     },
 
     // rendering
@@ -65,6 +128,48 @@
       );
       
       $('.js-ssr').hide();
+    },
+
+    // transition
+    transition: function () {
+      var that = this;
+
+      var current = $('.js-jsrString').text();
+      var $target_text = $('.js-jsrString');
+      var $target_block = $('.js-jsr_b');
+
+      if (current === PROJ.Data.string01) {
+        $target_text
+          .empty()
+          .html(PROJ.Data.string02);
+        $target_block
+          .removeClass('p-section-jsr')
+          .addClass('p-section-jsr02');
+      }
+      else if (current === PROJ.Data.string02) {
+        $target_text
+          .empty()
+          .html(PROJ.Data.string03);
+        $target_block
+          .removeClass('p-section-jsr02')
+          .addClass('p-section-jsr03');
+      }
+      else if (current === PROJ.Data.string03) {
+        $target_text
+          .empty()
+          .html(PROJ.Data.string04);
+        $target_block
+          .removeClass('p-section-jsr03')
+          .addClass('p-section-jsr04');
+      }
+      else if (current === PROJ.Data.string04) {
+        $target_text
+          .empty()
+          .html(PROJ.Data.string05);
+        $target_block
+          .removeClass('p-section-jsr04')
+          .addClass('p-section-jsr05');
+      }
     }
   };
 

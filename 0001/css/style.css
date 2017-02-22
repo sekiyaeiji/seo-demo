@@ -190,7 +190,7 @@ img {
   color: #fff;
 }
 .c-section > div {
-  padding: 24px 16px;
+  padding: 30px 16px;
   border: 1px solid #fff;
   text-align: center;
   font-weight: normal;
@@ -214,6 +214,18 @@ img {
 
 .p-section-jsr {
   background: #c44848;
+}
+.p-section-jsr02 {
+  background: #ce4343;
+}
+.p-section-jsr03 {
+  background: #d83e3e;
+}
+.p-section-jsr04 {
+  background: #e23939;
+}
+.p-section-jsr05 {
+  background: #ec3434;
 }
 
 
