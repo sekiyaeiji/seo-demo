@@ -9,62 +9,34 @@
   // router
   $(function () {
 
-    // hover
-    if ($('.js-store').length > 0) {
-      setHover.init();
+    // rendering
+    if ($('.js-jsr').length > 0) {
+      rendering.init();
     }
 
   });
 
 
-  // setHover
-  var setHover = {
+  // rendering
+  var rendering = {
 
     // init
     init: function () {
       var that = this;
 
-      // event
-      that.event();
+      // rendering
+      that.rendering();
     },
 
-    // event
-    event: function () {
-      $('.pattern-a .js-store').hover(
-        function () {
-          var $that = $(this);
-          var $target = $that.closest('li');
-          $target.addClass('store-hover-a');
-        },
-        function () {
-          var $that = $(this);
-          var $target = $that.closest('li');
-          $target.removeClass('store-hover-a');
-        }
-      );
-      $('.pattern-b .js-store').hover(
-        function () {
-          var $that = $(this);
-          var $target = $that.closest('li');
-          $target.addClass('store-hover-b');
-        },
-        function () {
-          var $that = $(this);
-          var $target = $that.closest('li');
-          $target.removeClass('store-hover-b');
-        }
-      );
-      $('.pattern-c .js-store').hover(
-        function () {
-          var $that = $(this);
-          var $target = $that.closest('li');
-          $target.addClass('store-hover-c');
-        },
-        function () {
-          var $that = $(this);
-          var $target = $that.closest('li');
-          $target.removeClass('store-hover-c');
-        }
+    // rendering
+    rendering: function () {
+      console.log(PROJ.Data.string01);
+      
+      var template = _.template($('#template-jsr').html());
+      $('.js-jsr').append(
+        template({
+          "string": PROJ.Data.string01
+        })
       );
     }
   };

@@ -16,14 +16,24 @@
             <p class="c-lead">リード文リード文リード文リード文リード文リード文リード文リード文リード文</p>
         </div>
     </div>
-    <div class="c-section p-section-jsr">
-        <div>
-            <p>JSレンダリング</p>
-        </div>
-    </div>
+    <div class="c-section p-section-jsr js-jsr"></div>
 
     <script src="js/vendor/jquery-3.1.0.min.js"></script>
+    <script src="js/vendor/lodash.min.js"></script>
+    <script>
+        window.PROJ = window.PROJ || {};
+        window.PROJ.Data = {
+            string01: "JSレンダリング01",
+            string02: "JSレンダリング02",
+            string03: "JSレンダリング03"
+        };
+    </script>
     <script src="js/script.js"></script>
+    <script type="text/html" id="template-jsr">
+        <div>
+            <p><%= string %></p>
+        </div>
+    </script>
 </body>
 
 </html>
