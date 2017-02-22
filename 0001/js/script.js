@@ -29,33 +29,41 @@
     // init
     init: function () {
       var that = this;
+      
+      var conf = {
+        state_base: '/0001/a01.html#!'
+      };
 
       // rendering
-      that.rendering();
+      that.rendering(conf);
 
       // event
-      that.event();
+      that.event(conf);
     },
 
     // event
-    event: function () {
+    event: function (conf) {
       var that = this;
       
-      $BOD.on('click', '.js-jsr_a', that.transition)
+      $BOD.on('click', '.js-jsr_a', function () {
+        that.transition(conf);
+      });
     },
 
     // rendering
-    rendering: function () {
+    rendering: function (conf) {
       var template = _.template($('#template-jsr').html());
       $('.js-jsr_a').append(
         template({
           "string": PROJ.Data.string01
         })
       );
+      history
+        .pushState(null, null, conf.state_base + PROJ.Data.state01);
     },
 
     // transition
-    transition: function () {
+    transition: function (conf) {
       var that = this;
       
       var current = $('.js-jsrString').text();
@@ -69,6 +77,8 @@
         $target_block
           .removeClass('p-section-jsr')
           .addClass('p-section-jsr02');
+        history
+          .pushState(null, null, conf.state_base + PROJ.Data.state02);
       }
       else if (current === PROJ.Data.string02) {
         $target_text
@@ -77,6 +87,8 @@
         $target_block
           .removeClass('p-section-jsr02')
           .addClass('p-section-jsr03');
+        history
+          .pushState(null, null, conf.state_base + PROJ.Data.state03);
       }
       else if (current === PROJ.Data.string03) {
         $target_text
@@ -85,6 +97,8 @@
         $target_block
           .removeClass('p-section-jsr03')
           .addClass('p-section-jsr04');
+        history
+          .pushState(null, null, conf.state_base + PROJ.Data.state04);
       }
       else if (current === PROJ.Data.string04) {
         $target_text
@@ -93,6 +107,18 @@
         $target_block
           .removeClass('p-section-jsr04')
           .addClass('p-section-jsr05');
+        history
+          .pushState(null, null, conf.state_base + PROJ.Data.state05);
+      }
+      else if (current === PROJ.Data.string05) {
+        $target_text
+          .empty()
+          .html(PROJ.Data.string01);
+        $target_block
+          .removeClass('p-section-jsr05')
+          .addClass('p-section-jsr');
+        history
+          .pushState(null, null, conf.state_base + PROJ.Data.state01);
       }
     }
   };
@@ -104,22 +130,28 @@
     init: function () {
       var that = this;
 
+      var conf = {
+        state_base: '/0001/b01.html#!'
+      };
+
       // rendering
-      that.rendering();
+      that.rendering(conf);
 
       // event
-      that.event();
+      that.event(conf);
     },
 
     // event
-    event: function () {
+    event: function (conf) {
       var that = this;
 
-      $BOD.on('click', '.js-jsr_b', that.transition)
+      $BOD.on('click', '.js-jsr_b', function () {
+        that.transition(conf);
+      });
     },
 
     // rendering
-    rendering: function () {
+    rendering: function (conf) {
       var template = _.template($('#template-jsr').html());
       $('.js-jsr_b').append(
         template({
@@ -169,6 +201,16 @@
         $target_block
           .removeClass('p-section-jsr04')
           .addClass('p-section-jsr05');
+      }
+      else if (current === PROJ.Data.string05) {
+        $target_text
+          .empty()
+          .html(PROJ.Data.string01);
+        $target_block
+          .removeClass('p-section-jsr05')
+          .addClass('p-section-jsr');
+        history
+          .pushState(null, null, conf.state_base + PROJ.Data.state01);
       }
     }
   };
