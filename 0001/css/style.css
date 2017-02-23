@@ -100,12 +100,13 @@ body {
   height: 100%;
 }
 a {
-  color: #ffb300;
+  color: #fff;
   text-decoration: none;
+  text-decoration: underline;
 }
 a:active,
 a:hover {
-  color: #ffb300;
+  color: #fff;
   text-decoration: underline;
 }
 blockquote,
@@ -212,9 +213,14 @@ img {
   background: #4848af;
 }
 
-.p-section-ssr--b {
+.p-section-ssr--b,
+.p-section-link--b {
   position: fixed;
   bottom: -200px;
+}
+
+.p-section-link {
+  background: #55b65b;
 }
 
 .p-section-jsr {

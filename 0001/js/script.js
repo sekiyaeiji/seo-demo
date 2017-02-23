@@ -153,7 +153,7 @@
 
     // rendering
     rendering: function (conf) {
-      $('.js-ssr').hide();
+      $('.js-ssr, .js-link').hide();
       
       var template = _.template($('#template-jsr').html());
       $('.js-jsr_b').append(
